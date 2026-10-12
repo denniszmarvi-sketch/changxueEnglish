@@ -8,8 +8,10 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=2">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png?v=2">
 <title>畅学英语</title>
 <style>
 :root{--bg:#f2f2f7;--card:#fff;--tx:#1c1c1e;--tx2:#8e8e93;--sep:#e5e5ea;--blue:#007aff;--green:#34c759;--red:#ff3b30;--fill:#e9e9ee}
@@ -27,6 +29,15 @@ h1{font-size:34px;letter-spacing:-.5px;margin:16px 0 12px}
 .list{background:var(--card);border-radius:14px;margin-bottom:16px;overflow:hidden}
 .list button{display:flex;justify-content:space-between;width:100%;border:0;background:none;color:var(--blue);padding:14px 16px;min-height:48px;text-align:left;border-bottom:.5px solid var(--sep)}.list button:last-child{border:0}.list button:active{background:var(--fill)}.list button:disabled{opacity:.4}.list span{color:var(--tx2)}.list .red{color:var(--red)}
 .foot{text-align:center;color:var(--tx2);font-size:13px}
+.rk{display:flex;align-items:center;gap:12px;width:100%;border:0;background:none;color:var(--tx);padding:12px 16px;text-align:left;border-bottom:.5px solid var(--sep)}.rk:last-child{border:0}.rk.me{background:rgba(10,132,255,.08)}.rk.sel{background:rgba(255,149,0,.12)}
+.rk .no{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:700;background:var(--fill);color:var(--tx2);font-variant-numeric:tabular-nums}
+.rk .no.g1{background:linear-gradient(135deg,#ffd60a,#ff9f0a);color:#fff}.rk .no.g2{background:linear-gradient(135deg,#d1d1d6,#8e8e93);color:#fff}.rk .no.g3{background:linear-gradient(135deg,#e6a26a,#b26b34);color:#fff}
+.rk .nm{flex:1;min-width:0}.rk .nm b{display:block;font-weight:600}.rk .nm small{color:var(--tx2);font-size:12px}.rk .val{font-weight:700;font-variant-numeric:tabular-nums}.rk .val small{font-weight:400;color:var(--tx2);font-size:12px;margin-left:2px}
+.vs{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;text-align:center;gap:8px;margin-bottom:6px}.vs b{font-size:18px}.vs small{display:block;color:var(--tx2);font-size:12px}.vs i{font-style:normal;font-weight:800;color:var(--orange);font-size:20px}
+.cmp{margin-top:12px}.cmp div{display:grid;grid-template-columns:1fr 64px 1fr;align-items:center;gap:8px;margin:10px 0;font-size:13px}.cmp span{color:var(--tx2);text-align:center}
+.cmp em{position:relative;height:22px;border-radius:11px;background:var(--fill);overflow:hidden;font-style:normal;font-weight:600;font-size:12px;line-height:22px;font-variant-numeric:tabular-nums}
+.cmp em i{position:absolute;top:0;bottom:0;border-radius:11px}.cmp em:first-child i{right:0;background:linear-gradient(270deg,#0a84ff,#5e5ce6)}.cmp em:last-child i{left:0;background:linear-gradient(90deg,#ff9f0a,#ff375f)}
+.cmp em b{position:relative;padding:0 8px;color:var(--tx)}.cmp em:first-child b{float:left}.cmp em:last-child b{float:right}.cmp em.w b{color:#fff}
 .top{display:flex;justify-content:space-between;align-items:center;color:var(--tx2);margin-bottom:8px}.top button{border:0;background:none;color:var(--blue);padding:8px 0}
 .q{text-align:center;padding:40px 20px;margin:20px 0 16px}.q small{color:var(--tx2)}.q h2{font-size:38px;margin:8px 0 0;word-break:break-word;letter-spacing:-.5px}
 .opt{display:block;width:100%;border:0;border-radius:14px;background:var(--card);color:var(--tx);padding:15px 16px;margin-bottom:10px;text-align:left;min-height:52px}.opt:active{background:var(--fill)}.opt.ok{background:var(--green);color:#fff}.opt.bad{background:var(--red);color:#fff}
@@ -100,10 +111,10 @@ h1{font-size:34px;line-height:1.05;letter-spacing:-.022em;font-weight:700;margin
 @keyframes sheen{0%,62%{transform:rotate(20deg) translateX(0)}100%{transform:rotate(20deg) translateX(520%)}}
 .hero{box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 14px 36px rgba(10,132,255,.30)}
 .top{background:var(--gl);box-shadow:inset 0 -.5px 0 rgba(127,127,127,.2);margin:0 -16px 8px;padding:8px 16px}
-#tab{left:50%;right:auto;bottom:calc(10px + env(safe-area-inset-bottom));transform:translateX(-50%);width:min(320px,calc(100% - 32px));display:grid;grid-template-columns:1fr 1fr;gap:0;padding:6px;border:0;border-radius:999px;background:var(--gl2);box-shadow:var(--spec),0 10px 30px rgba(0,0,0,.16)}
+#tab{left:50%;right:auto;bottom:calc(10px + env(safe-area-inset-bottom));transform:translateX(-50%);width:min(360px,calc(100% - 32px));display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;padding:6px;border:0;border-radius:999px;background:var(--gl2);box-shadow:var(--spec),0 10px 30px rgba(0,0,0,.16)}
 #tab button{max-width:none;position:relative;z-index:1}
-#tab .lens{position:absolute;top:6px;bottom:6px;left:6px;width:calc(50% - 6px);border-radius:999px;background:rgba(10,132,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -1px 2px rgba(10,132,255,.12),0 2px 8px rgba(10,132,255,.18);transition:transform .6s cubic-bezier(.34,1.35,.64,1)}
-#tab[data-on=me] .lens{transform:translateX(100%)}
+#tab .lens{position:absolute;top:6px;bottom:6px;left:6px;width:calc((100% - 12px)/3);border-radius:999px;background:rgba(10,132,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -1px 2px rgba(10,132,255,.12),0 2px 8px rgba(10,132,255,.18);transition:transform .6s cubic-bezier(.34,1.35,.64,1)}
+#tab[data-on=pk] .lens{transform:translateX(100%)}#tab[data-on=me] .lens{transform:translateX(200%)}
 #tab .lens{animation:none}#tab[data-on] .lens{animation:wob .6s cubic-bezier(.23,1,.32,1)}
 @keyframes wob{40%{border-radius:40% 60% 55% 45%/60% 45% 55% 40%}}
 .toast{background:rgba(40,40,44,.72);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 10px 30px rgba(0,0,0,.25);border-radius:999px;padding:10px 18px}
@@ -153,16 +164,16 @@ h1{font-size:34px;line-height:1.05;letter-spacing:-.022em;font-weight:700;margin
 </style></head><body>
 <div id="bg" aria-hidden="true"><i></i><i></i><i></i></div>
 <div id="app"></div>
-<nav id="tab" hidden><span class="lens"></span><button data-a="main"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg>主页</button><button data-a="me"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>我的</button></nav>
+<nav id="tab" hidden><span class="lens"></span><button data-a="main"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg>主页</button><button data-a="pk"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></svg>PK</button><button data-a="me"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>我的</button></nav>
 <input id="av" type="file" accept="image/*" hidden>
 <input id="f" type="file" accept=".csv,.txt,.json,application/json,text/*" hidden>
-<script src="config.js"></script><script src="data.js"></script><script src="mottos.js"></script>
+<script src="config.js"></script><script src="users.js"></script><script src="data.js"></script><script src="mottos.js"></script>
 <script>
 const K='jbdc.v2',$=s=>document.querySelector(s),app=$('#app');
 let S={st:{},extra:[],sess:null,pack:'gw',user:null,log:{},start:''};
 try{Object.assign(S,JSON.parse(localStorage.getItem(K)||'{}'))}catch(e){}
 if(!{gw:1,gp:1}[S.pack])S.pack='gw';
-const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){toast('存储空间不足，请先备份')}};
+const save=meta=>{if(!meta)S.upd=Date.now();try{localStorage.setItem(K,JSON.stringify(S))}catch(e){toast('存储空间不足，请先备份')}};
 const TAGS={gw:'高考词汇',gp:'高考词组'},BITS={gw:1,gp:16};
 const bank=()=>[...new Map([...(window.WORDS||[]),...S.extra].map(x=>[x[0],x])).values()];
 const items=()=>bank().filter(x=>x[2]&BITS[S.pack]);
@@ -201,14 +212,14 @@ else{if(!S.st[w])d.scr++;S.st[w]=ok?'k':'u'}
 ss.i++;save();
 document.querySelectorAll('.opt').forEach((b,j)=>{if(cur.o[j]==cur.c[1])b.classList.add('ok');else if(j==i)b.classList.add('bad')});
 if(ok)setTimeout(()=>view=='quiz'&&quiz(),Math.round(700*SK()));else $('#nx').innerHTML=`<p class=hint>${ss.m=='learn'||ss.m=='rev'?'记住它，一会儿还会再考你':''}</p><button class=primary data-a=next>继续</button>`}
-function done(){tab();view='done';const m=S.sess&&S.sess.m;S.sess=null;save();const t=task();
+function done(){setTimeout(()=>push(),300);tab();view='done';const m=S.sess&&S.sess.m;S.sess=null;save();const t=task();
 let h;if(m=='learn')h=`<h2>这一组背完了</h2><p>今天已背新词 ${t.d.nw} / ${t.nT}</p>`;else if(m=='rev')h=`<h2>复习完成</h2><p>今天已复习 ${t.d.rv} 个，已掌握 ${mastered()} 个</p>`;else{const[k,u]=cnt(m=='scr'?bank():items());h=`<h2>本轮筛查完成</h2><p>已会 ${k} 个，不会 ${u} 个</p>`}
 app.innerHTML=`<div class=card style="text-align:center;margin-top:20vh">${h}</div><button class=primary data-a=${m=='new'||m=='re'?'home':'main'}>${m=='new'||m=='re'?'返回词汇筛查':'返回主页'}</button>`;checkDone()}
 const rows=()=>bank().filter(x=>S.st[x[0]]=='u'),q=s=>'"'+s.replace(/"/g,'""')+'"';
 async function out(f){if(navigator.canShare&&navigator.canShare({files:[f]})){try{await navigator.share({files:[f]});return}catch(e){if(e.name=='AbortError')return}}const a=document.createElement('a');a.href=URL.createObjectURL(f);a.download=f.name;a.click()}
 function exp(){const r=rows();if(!r.length)return toast('还没有不会的词');out(new File(['\ufeff词汇,汉译\n'+r.map(x=>q(x[0])+','+q(x[1])).join('\n')],'不会的单词.csv',{type:'text/csv'}))}
 function cp(){const r=rows();if(!r.length)return toast('还没有不会的词');navigator.clipboard.writeText('词汇\t汉译\n'+r.map(x=>x[0]+'\t'+x[1]).join('\n')).then(()=>toast('已复制，可粘贴到备忘录或 Numbers'))}
-const BK=['st','extra','log','start','srs','done','goal','pack','spd','nofx','avatar'];
+const BK=['st','extra','log','start','srs','done','goal','pack','spd','nofx','avatar','hist','day'];
 function bak(){persist();const d={app:'changxue',v:1,at:Date.now()};BK.forEach(k=>{if(S[k]!=null)d[k]=S[k]});S.lastBak=Date.now();save();out(new File([JSON.stringify(d)],'畅学英语进度备份-'+today()+'.json',{type:'application/json'}));if(view=='me')setTimeout(()=>me(1),300)}
 let PST=null;async function persist(){try{if(!navigator.storage||!navigator.storage.persist)return PST=null;PST=await navigator.storage.persisted()||await navigator.storage.persist()}catch(e){PST=null}return PST}
 const ago=t=>{if(!t)return'从未备份';const n=Math.floor((Date.now()-t)/864e5);return n<1?'今天':n+' 天前'};
@@ -222,7 +233,7 @@ t.replace(/^\ufeff/,'').split(/\r?\n/).forEach(l=>{const m=l.match(/^"?([^,\t"]+
 const w=m[1].trim();let g=BITS[m[3]||base];if(!m[3]&&/ /.test(w)&&g<16)g<<=4;S.extra.push([w,m[2].trim(),g]);seen.add(w);n++});
 save();toast(`已导入 ${n} 条`);home()};
 app.onclick=e=>{const b=e.target.closest('button');if(!b||b.disabled)return;const d=b.dataset;
-if(d.p){S.pack=d.p;save();home()}else if(d.o!=null)ans(+d.o);else switch(d.a){case'new':start('new');break;case're':start('re');break;case'resume':quiz();break;case'dk':ans(-1);break;case'next':quiz();break;case'exit':case'home':home();break;case'soon':b.classList.add('gray');toast('该功能待开放，敬请期待');break;case'main':main();break;case't_new':startT('learn');break;case't_rev':startT('rev');break;case't_scr':startT('scr');break;case'goal':S.goal={150:250,250:400,400:150}[GOALN()]||150;save();me(1);break;case'me':me();break;case'sp':S.spd=(S.spd||'slow')=='slow'?'std':'slow';save();spd();me(1);break;case'fx':S.nofx=!S.nofx;save();fx();me(1);break;case'pw':if(!API||!S.user)toast('登录功能开通后可修改密码');else pwView();break;case'pw2':pw2();break;case'avatar':$('#av').click();break;case'vocab':home();break;case'exp':exp();break;case'copy':cp();break;case'imp':$('#f').click();break;case'bak':bak();break;case'out':if(b.dataset.sure){S.user=null;save();boot()}else{b.dataset.sure=1;b.textContent='再点一次，确认退出';setTimeout(()=>{if(b.isConnected){b.dataset.sure='';b.textContent='退出登录'}},3000)}break;case'eye':{const f=b.parentNode.querySelector('input');f.type=f.type=='password'?'text':'password';b.classList.toggle('on',f.type=='text')}break;case'login':login();break;case'chg':chg();break;case'rst':if(confirm('清空所有已会/不会记录？词库保留。')){S.st={};S.sess=null;save();home()}}};
+if(d.p){S.pack=d.p;save();home()}else if(d.o!=null)ans(+d.o);else switch(d.a){case'new':start('new');break;case're':start('re');break;case'resume':quiz();break;case'dk':ans(-1);break;case'next':quiz();break;case'exit':case'home':home();break;case'soon':b.classList.add('gray');toast('该功能待开放，敬请期待');break;case'main':main();break;case't_new':startT('learn');break;case't_rev':startT('rev');break;case't_scr':startT('scr');break;case'goal':S.goal={150:250,250:400,400:150}[GOALN()]||150;save();me(1);break;case'me':me();break;case'pk':pk();break;case'pks':RKK=d.k;RKI=-1;pkDraw();break;case'pkv':RKI=+d.i;pkDraw();break;case'sp':S.spd=(S.spd||'slow')=='slow'?'std':'slow';save();spd();me(1);break;case'fx':S.nofx=!S.nofx;save();fx();me(1);break;case'pw':if(!(API||LOCAL)||!S.user)toast('登录功能开通后可修改密码');else pwView();break;case'pw2':pw2();break;case'avatar':$('#av').click();break;case'vocab':home();break;case'exp':exp();break;case'copy':cp();break;case'imp':$('#f').click();break;case'bak':bak();break;case'out':if(b.dataset.sure){push();S.user=null;RK=null;save(1);boot()}else{b.dataset.sure=1;b.textContent='再点一次，确认退出';setTimeout(()=>{if(b.isConnected){b.dataset.sure='';b.textContent='退出登录'}},3000)}break;case'eye':{const f=b.parentNode.querySelector('input');f.type=f.type=='password'?'text':'password';b.classList.toggle('on',f.type=='text')}break;case'login':login();break;case'chg':chg();break;case'rst':if(confirm('清空所有已会/不会记录？词库保留。')){S.st={};S.sess=null;save();home()}}};
 const API=window.API_URL||'';
 const SPD={slow:1.5,std:1};const SK=()=>SPD[S.spd]||1.5;function spd(){document.documentElement.style.setProperty('--k',SK())}
 let pv='',ringDone=false;
@@ -262,11 +273,12 @@ app.innerHTML=`<h1>我的</h1>
 <div class=list><button data-a=sp>动画速度<span>${(S.spd||'slow')=='slow'?'舒缓':'标准'}</span></button><button data-a=fx>动态玻璃背景<span>${S.nofx?'已关闭':'已开启'}</span></button></div>
 <h3 class=sec>数据与备份</h3><div class=list><div class=row2><span>本机存储</span><b>${PST?'已开启保护':PST===false?'普通（请定期备份）':'—'}</b></div><button data-a=bak>导出进度备份<span>${ago(S.lastBak)}</span></button><button data-a=imp>从备份恢复</button></div>
 <p class=foot style="margin:-4px 16px 18px;text-align:left;line-height:1.6">进度只保存在这台设备上。删除桌面图标、清除浏览器数据或换手机前，请先导出备份，存到“文件”或发到微信文件传输助手。${S.lastBak&&Date.now()-S.lastBak<7*864e5?'':'<br><b style="color:var(--orange,#ff9500)">建议每周备份一次。</b>'}</p>
-<div class=list><button data-a=pw>修改密码</button>${(API||DEMO)&&S.user?'<button data-a=out>退出登录</button>':''}</div>
-<p class=foot>${API&&S.user?'手机号如需更换，请联系老师':'登录功能开通后，这里会显示姓名、学校、年级和加入时间'}</p>`;
-if(!skip&&API&&S.user&&S.user.token){const o=JSON.stringify([u.name,u.school,u.grade,u.joined]);post('/me',{token:S.user.token}).then(r=>{if(r&&r.ok){Object.assign(S.user,{name:r.name,school:r.school,grade:r.grade,joined:r.joined});save();if(view=='me'&&JSON.stringify([r.name,r.school,r.grade,r.joined])!=o)me(1)}}).catch(()=>{})}}
+<div class=list><button data-a=pw>修改密码</button>${(API||DEMO||LOCAL)&&S.user?'<button data-a=out>退出登录</button>':''}</div>
+<p class=foot>${(API||LOCAL)&&S.user?'手机号如需更换，请联系老师':'登录功能开通后，这里会显示姓名、学校、年级和加入时间'}</p>`;
+if(!skip&&API&&S.user&&S.user.token){const o=JSON.stringify([u.name,u.school,u.grade,u.joined]);post('/me',{token:S.user.token}).then(r=>{if(r&&r.auth)return expire();if(r&&r.ok){Object.assign(S.user,{name:r.name,school:r.school,grade:r.grade,joined:r.joined});save();if(view=='me'&&JSON.stringify([r.name,r.school,r.grade,r.joined])!=o)me(1)}}).catch(()=>{})}}
 function pwView(m){tab();view='pw';app.innerHTML=`<div class=top><button data-a=me>‹ 我的</button><span></span></div><h1>修改密码</h1><div class="card login"><input id=o0 type=password placeholder="当前密码" autocomplete=current-password><input id=n1 type=password placeholder="新密码（至少 8 位）" autocomplete=new-password><input id=n2 type=password placeholder="再输入一次新密码" autocomplete=new-password><button class=primary data-a=pw2>确定</button><p class=foot>${m||''}</p></div>`}
-async function pw2(){const o=$('#o0').value,a=$('#n1').value;if(!o)return pwView('请输入当前密码');if(a.length<8)return pwView('新密码至少 8 位');if(a!=$('#n2').value)return pwView('两次输入不一致');try{const r=await post('/password',{token:S.user.token,old:o,password:a});if(!r.ok)return pwView(r.msg||'修改失败');toast('密码已修改');me(1)}catch(e){pwView('网络不可用，请联网后重试')}}
+async function pw2(){const o=$('#o0').value,a=$('#n1').value;if(!o)return pwView('请输入当前密码');if(a.length<8)return pwView('新密码至少 8 位');if(a=='1234qwer')return pwView('不能和初始密码相同');if(a!=$('#n2').value)return pwView('两次输入不一致');
+if(LOCAL&&S.user.local){if(!(await lchk(S.user.phone,o,S.user.local)))return pwView('当前密码不正确');await lset(a);toast('密码已修改');return me(1)}try{const r=await post('/password',{token:S.user.token,old:o,password:a});if(r.auth)return expire();if(!r.ok)return pwView(r.msg||'修改失败');if(r.token){S.user.token=r.token;save(1)}toast('密码已修改');me(1)}catch(e){pwView('网络不可用，请联网后重试')}}
 $('#av').onchange=e=>{const f=e.target.files[0];e.target.value='';if(!f)return;const im=new Image();im.onload=()=>{const c=document.createElement('canvas');c.width=c.height=160;const m=Math.min(im.width,im.height);c.getContext('2d').drawImage(im,(im.width-m)/2,(im.height-m)/2,m,m,0,0,160,160);S.avatar=c.toDataURL('image/jpeg',.85);save();me(1);URL.revokeObjectURL(im.src)};im.src=URL.createObjectURL(f)};
 if(typeof MutationObserver=='function')new MutationObserver(()=>{app.classList.toggle('enter',view!==pv);pv=view}).observe(app,{childList:true});
 const INT=[1,2,4,7,15];// 间隔重复：答对后隔 1、2、4、7、15 天再复习，过完 15 天这一轮算掌握
@@ -277,7 +289,7 @@ const pool=()=>bank().filter(x=>S.st[x[0]]=='u'&&!srs()[x[0]]).map(x=>x[0]);
 const due=()=>Object.keys(srs()).filter(w=>srs()[w].due<=today());
 const untested=()=>bank().filter(x=>!S.st[x[0]]).length;
 const mastered=()=>bank().filter(x=>S.st[x[0]]=='k').length;
-function dayRec(){const t=today();if(!S.day||S.day.d!=t){const dn=dayNo();S.day={d:t,scr:0,nw:0,rv:0,scrT:dn<=14?Math.ceil(untested()/(15-dn)):0}}return S.day}
+function dayRec(){const t=today();if(!S.day||S.day.d!=t){if(S.day&&S.day.d){S.hist=S.hist||{};S.hist[S.day.d]={nw:S.day.nw||0,rv:S.day.rv||0,scr:S.day.scr||0}}const dn=dayNo();S.day={d:t,scr:0,nw:0,rv:0,scrT:dn<=14?Math.ceil(untested()/(15-dn)):0}}return S.day}
 function task(){const d=dayRec(),dn=dayNo(),pl=pool().length,du=due().length,nT=Math.min(GOALN(),d.nw+pl),rT=d.rv+du;
 const parts=[[d.scr,d.scrT],[d.nw,nT],[d.rv,rT]].filter(x=>x[1]>0),done=parts.reduce((a,x)=>a+Math.min(x[0],x[1]),0),all=parts.reduce((a,x)=>a+x[1],0);
 const ok=d.scr>=d.scrT&&d.nw>=nT&&du==0&&(d.nw>0||d.rv>0||d.scr>0);return{d,dn,pl,du,nT,rT,p:all?done/all:0,ok}}
@@ -294,7 +306,13 @@ const GL='.mod,.opt,.list button,.primary,.chip,.avatar';let litEl=null;
 const lit=(e,on)=>{const el=e.target.closest&&e.target.closest(GL);if(on&&el&&!el.disabled){const r=el.getBoundingClientRect();el.style.setProperty('--x',(e.clientX-r.left)+'px');el.style.setProperty('--y',(e.clientY-r.top)+'px');el.classList.add('lit');litEl=el}else if(!on&&litEl){const x=litEl;setTimeout(()=>x.classList.remove('lit'),120);litEl=null}};
 addEventListener('pointerdown',e=>lit(e,1),{passive:true});addEventListener('pointermove',e=>{if(litEl&&e.buttons){const r=litEl.getBoundingClientRect();litEl.style.setProperty('--x',(e.clientX-r.left)+'px');litEl.style.setProperty('--y',(e.clientY-r.top)+'px')}},{passive:true});
 ['pointerup','pointercancel'].forEach(t=>addEventListener(t,e=>lit(e,0),{passive:true}));
-const DEMO=!!window.DEMO_LOGIN;// 仅预览版为 true：用初始密码 1234qwer 演示登录流程，不连云端
+const DEMO=!!window.DEMO_LOGIN,LOCAL=!API&&!DEMO&&!!window.LOCAL_LOGIN,LSALT='changxue-2026',TE=new TextEncoder();
+const hex=b=>[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');
+const lid=async p=>hex(await crypto.subtle.digest('SHA-256',TE.encode(LSALT+':id:'+p))).slice(0,24);
+async function ldec(p,d){const raw=Uint8Array.from(atob(d),c=>c.charCodeAt(0)),k=await crypto.subtle.importKey('raw',await crypto.subtle.digest('SHA-256',TE.encode(LSALT+':key:'+p)),'AES-GCM',false,['decrypt']);return JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:raw.slice(0,12)},k,raw.slice(12))))}
+async function lpw(p,w){const k=await crypto.subtle.importKey('raw',TE.encode(w),'PBKDF2',false,['deriveBits']);return hex(await crypto.subtle.deriveBits({name:'PBKDF2',salt:TE.encode(LSALT+':pw:'+p),iterations:100000,hash:'SHA-256'},k,256))}
+async function lchk(p,w,id){const H=(S.lpw||{})[id];return H?(await lpw(p,w))===H:w==='1234qwer'}
+async function lset(w){S.lpw=S.lpw||{};S.lpw[S.user.local]=await lpw(S.user.phone,w);S.user.must=false;save()}// 仅预览版为 true：用初始密码 1234qwer 演示登录流程，不连云端
 function authShell(title,sub,form,foot){return`<div class=auth><img class=appicon src="icon-192.png" alt=""><h1>${title}</h1><p class=sub>${sub}</p><form class="card login" id=af novalidate>${form}</form><p class=foot>${foot}</p></div>`}
 function authErr(m){const e=$('#lmsg');if(!e)return;e.textContent=m||'';e.classList.remove('shk');void e.offsetWidth;if(m)e.classList.add('shk')}
 function busy(on,t){const b=$('#lb');if(b){b.disabled=on;b.textContent=on?'请稍候…':t}}
@@ -307,16 +325,52 @@ $('#af').onsubmit=e=>{e.preventDefault();login()}}
 async function login(){const p=$('#ph').value.trim(),w=$('#pw').value;
 if(!/^1\d{10}$/.test(p))return authErr('请输入 11 位报名手机号');if(!w)return authErr('请输入密码');
 if(DEMO){if(w!=='1234qwer')return authErr('手机号或密码不正确，或尚未开通');S.user={phone:p,name:'演示同学',school:'第一中学',grade:'高二',joined:Date.now()-12*864e5,token:'demo',must:true};save();return chgView()}
-busy(true);try{const r=await post('/login',{phone:p,password:w});if(!r.ok){busy(false,'登录');return authErr(r.msg||'手机号或密码不正确，或尚未开通')}S.user={phone:p,name:r.name||'',school:r.school||'',grade:r.grade||'',joined:r.joined||0,token:r.token,must:!!r.must};save();S.user.must?chgView():main()}catch(e){busy(false,'登录');authErr('网络不可用，首次登录需要联网')}}
+if(LOCAL){const U=window.USERS&&USERS.list;if(!U)return authErr('名单加载失败，请联网后重新打开');busy(true);try{const id=await lid(p),e=U.find(x=>x.i==id);if(!e||!(await lchk(p,w,id))){busy(false,'登录');return authErr('手机号或密码不正确，或尚未开通')}const r=await ldec(p,e.d);S.user={phone:p,name:r.n||'',school:r.s||'',grade:r.g||'',joined:r.j||0,token:'local',local:id,must:!(S.lpw||{})[id]};save();S.user.must?chgView():main()}catch(x){busy(false,'登录');authErr('登录失败，请用系统自带浏览器打开')}return}
+busy(true);try{const r=await post('/login',{phone:p,password:w});if(!r.ok){busy(false,'登录');return authErr(r.msg||'手机号或密码不正确，或尚未开通')}S.user={phone:p,name:r.name||'',school:r.school||'',grade:r.grade||'',joined:r.joined||0,token:r.token,must:!!r.must};save(1);await afterLogin(p);S.user.must?chgView():main()}catch(e){busy(false,'登录');authErr('网络不可用，首次登录需要联网')}}
 function chgView(m){tab();view='login';app.innerHTML=authShell('设置新密码','首次登录，请把初始密码改成你自己的密码',
 `<label class=fld><input id=n1 type=password placeholder="新密码（至少 8 位）" autocomplete=new-password><button type=button class=eye data-a=eye aria-label="显示密码"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></label>
 <label class=fld><input id=n2 type=password placeholder="再输入一次新密码" autocomplete=new-password></label>
-<p class=err id=lmsg role=alert>${m||''}</p><button class=primary id=lb type=submit>确定</button>`,'新密码只保存在加密的云端，老师也看不到');
+<p class=err id=lmsg role=alert>${m||''}</p><button class=primary id=lb type=submit>确定</button>`,LOCAL?'新密码加密保存在这台设备上，换手机后用初始密码重新登录':'新密码只保存在加密的云端，老师也看不到');
 $('#af').onsubmit=e=>{e.preventDefault();chg()}}
 async function chg(){const a=$('#n1').value;if(a.length<8)return authErr('新密码至少 8 位');if(a=='1234qwer')return authErr('不能和初始密码相同');if(a!=$('#n2').value)return authErr('两次输入的密码不一致');
 if(DEMO){S.user.must=false;save();toast('密码已设置');return main()}
-busy(true);try{const r=await post('/password',{token:S.user.token,password:a});if(!r.ok){busy(false,'确定');return authErr(r.msg||'修改失败')}S.user.must=false;save();toast('密码已设置');main()}catch(e){busy(false,'确定');authErr('网络不可用，请联网后重试')}}
-function boot(){if(!API&&!DEMO)return main();if(S.user&&S.user.token)return S.user.must?chgView():main();loginView()}
+if(LOCAL&&S.user.local){busy(true);await lset(a);toast('密码已设置');return main()}
+busy(true);try{const r=await post('/password',{token:S.user.token,password:a});if(r.auth)return expire();if(!r.ok){busy(false,'确定');return authErr(r.msg||'修改失败')}if(r.token)S.user.token=r.token;S.user.must=false;save();toast('密码已设置');main()}catch(e){busy(false,'确定');authErr('网络不可用，请联网后重试')}}
+// ---------- 云同步 ----------
+function stats(){const[k,u,n0]=cnt(bank()),d=dayRec(),h=Object.assign({},S.hist||{});h[d.d]={nw:d.nw||0,rv:d.rv||0,scr:d.scr||0,q:(S.log||{})[d.d]||0,ok:(S.done||{})[d.d]?1:0};
+for(const x in h){h[x].q=h[x].q||(S.log||{})[x]||0;h[x].ok=(S.done||{})[x]?1:0}
+const ks=Object.keys(h).sort().slice(-60),hh={};ks.forEach(x=>hh[x]=h[x]);
+return{rc:bank().filter(x=>S.st[x[0]]=='k'||srs()[x[0]]).length,tot:bank().length,mk:mastered(),k,u,n0,streak:streak(),dn:dayNo(),done:Object.keys(S.done||{}).length,goal:GOALN(),hist:hh}}
+const online=()=>API&&S.user&&S.user.token&&S.user.token!='demo'&&S.user.token!='local';
+let pushing=null;
+async function push(force){if(!online())return;if(!force&&(S.synced||0)>=(S.upd||0))return;if(pushing)return pushing;
+const st={};BK.forEach(k=>{if(S[k]!=null)st[k]=S[k]});const upd=S.upd||Date.now();
+pushing=post('/sync',{token:S.user.token,upd,state:st,stats:stats()}).then(r=>{if(r&&r.auth)return expire();if(r&&r.ok){S.synced=upd;save(1)}}).catch(()=>{}).finally(()=>{pushing=null});return pushing}
+function expire(){S.user=null;save(1);loginView('登录已过期，或账号已被老师停用，请重新登录')}
+function applyState(d){const keep={user:S.user,owner:S.owner};['st','extra','log','start','srs','done','hist','day'].forEach(k=>{S[k]=d[k]!=null?d[k]:(k=='st'||k=='srs'||k=='log'||k=='done'||k=='hist'?{}:k=='extra'?[]:k=='start'?'':null)});
+['goal','pack','spd','nofx','avatar'].forEach(k=>{if(d[k]!=null)S[k]=d[k]});if(!{gw:1,gp:1}[S.pack])S.pack='gw';S.sess=null;Object.assign(S,keep);spd();fx()}
+async function afterLogin(p){try{const r=await post('/pull',{token:S.user.token});const mine=!S.owner||S.owner==p;
+if(r&&r.ok&&r.state&&(!mine||(r.upd||0)>(S.upd||0))){applyState(r.state);S.upd=r.upd;S.synced=r.upd}
+else if(!mine){applyState({});S.upd=Date.now()}}catch(e){}S.owner=p;save(1);push(1)}
+addEventListener('visibilitychange',()=>{if(document.visibilityState=='hidden')push()});
+addEventListener('online',()=>push());setInterval(()=>push(),120000);
+// ---------- PK ----------
+let RK=null,RKK='wk',RKI=-1;
+const RKM={wk:['本周学习','个','本周背新词 + 复习'],rc:['总进度','个','已背单词总数'],streak:['连续打卡','天','连续完成每日任务']};
+async function pk(){tab('pk');view='pk';
+if(!API){app.innerHTML=`<h1>PK 榜</h1><div class=card style="text-align:center;color:var(--tx2)"><p style="font-size:44px;margin:8px 0">🏆</p><p>和同班同学比一比谁背得多</p><p style="font-size:13px">联网版开通后开放，所有同学都以匿名显示</p></div>`;return}
+if(!RK)app.innerHTML=`<h1>PK 榜</h1><div class=card style="text-align:center;color:var(--tx2)">正在加载…</div>`;else pkDraw();
+try{await push(1);const r=await post('/rank',{token:S.user.token});if(r&&r.auth)return expire();if(r&&r.ok){RK=r.list;if(view=='pk')pkDraw()}}catch(e){if(view=='pk'&&!RK)app.innerHTML=`<h1>PK 榜</h1><div class=card style="text-align:center;color:var(--tx2)">网络不可用，联网后再来看看</div>`}}
+function pkSorted(){return RK.slice().sort((a,b)=>(b[RKK]-a[RKK])||(b.rc-a.rc)||(b.me-a.me))}
+function pkDraw(){const L=pkSorted(),meI=L.findIndex(x=>x.me),me=L[meI],sel=RKI>=0&&L[RKI]&&!L[RKI].me?L[RKI]:(meI>0?L[meI-1]:L.find(x=>!x.me)),m=RKM[RKK];
+let rank=0,prev=null;const rows=L.map((x,i)=>{if(prev===null||x[RKK]!==prev)rank=i+1;prev=x[RKK];return`<button class="rk${x.me?' me':''}${x===sel?' sel':''}" data-a=pkv data-i=${i}><span class="no${rank<=3?' g'+rank:''}">${rank}</span><span class=nm><b>${esc(x.nm)}${x.me?'（我）':''}</b><small>${esc(x.grade||'')}${x.act?' · 今天学过':''}</small></span><span class=val>${x[RKK]}<small>${m[1]}</small></span></button>`}).join('');
+const bar=(a,b,l)=>{const mx=Math.max(a,b,1);return`<div><em class="${a>=b&&a>0?'w':''}"><i style="width:${a/mx*100}%"></i><b>${a}</b></em><span>${l}</span><em class="${b>=a&&b>0?'w':''}"><i style="width:${b/mx*100}%"></i><b>${b}</b></em></div>`};
+const vs=me&&sel?`<div class=card><div class=vs><div><b>我</b><small>第 ${meI+1} 名</small></div><i>VS</i><div><b>${esc(sel.nm)}</b><small>第 ${L.indexOf(sel)+1} 名 · 点下方名单可换对手</small></div></div>
+<div class=cmp>${bar(me.wk,sel.wk,'本周学习')}${bar(me.wnw,sel.wnw,'本周新词')}${bar(me.rc,sel.rc,'已背单词')}${bar(me.mk,sel.mk,'已掌握')}${bar(me.streak,sel.streak,'连续打卡')}</div>
+<p class=foot style="margin:6px 0 0">${me[RKK]>sel[RKK]?'领先对手 '+(me[RKK]-sel[RKK])+' '+m[1]+'，保持住！':me[RKK]<sel[RKK]?'还差 '+(sel[RKK]-me[RKK])+' '+m[1]+' 就能追上，加油！':'势均力敌，今天多背一点就能领先'}</p></div>`:'';
+app.innerHTML=`<h1>PK 榜</h1><div class=chips>${Object.entries(RKM).map(([k,v])=>`<button class="chip${RKK==k?' on':''}" data-a=pks data-k=${k}>${v[0]}</button>`).join('')}</div>${vs}
+<div class=thead><b>${m[0]}排行</b><span>${L.length} 位同学 · 匿名显示</span></div><div class=list>${rows||'<p class=foot style="padding:16px">还没有同学的数据</p>'}</div><p class=foot>${m[2]}。名字只显示首尾字，其他同学看不到你的真实姓名</p>`}
+function boot(){if(!API&&!DEMO&&!LOCAL)return main();if(S.user&&S.user.token){if(LOCAL&&(!S.user.local||(window.USERS&&USERS.list&&!USERS.list.some(x=>x.i==S.user.local)))){S.user=null;save();return loginView('账号未开通或已停用，请联系老师')}return S.user.must?chgView():main()}loginView()}
 persist().then(()=>{if(view=='me')me(1)});
 if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 $('#tab').addEventListener('click',e=>app.onclick(e));

@@ -1,2 +1,3 @@
-// 云端地址：部署好 Cloudflare 后，把网址填在引号里（例如 https://xxx.workers.dev）。留空 = 暂不启用登录
 window.API_URL='';
+// 测试期：本地名单登录（名单在 users.js，由「名单生成器.html」生成）
+window.LOCAL_LOGIN=true;
