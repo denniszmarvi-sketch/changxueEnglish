@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>下载畅学英语</title>
+<meta name="theme-color" content="#FAFBFE">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<style>
+:root{--bg:#f4f6fb;--card:rgba(255,255,255,.72);--tx:#1c1c1e;--tx2:#6b6b74;--blue:#0a84ff;--indigo:#5e5ce6;--sep:rgba(60,60,67,.14);--b1:rgba(10,132,255,.28);--b2:rgba(175,82,222,.22);--b3:rgba(48,176,199,.24)}
+@media(prefers-color-scheme:dark){:root{--bg:#000;--card:rgba(40,40,44,.6);--tx:#fff;--tx2:#a1a1aa;--sep:rgba(255,255,255,.12)}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--tx);font:16px/1.5 -apple-system,BlinkMacSystemFont,"PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased;padding:env(safe-area-inset-top) 16px calc(24px + env(safe-area-inset-bottom))}
+#bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+#bg i{position:absolute;width:80vmax;height:80vmax;border-radius:50%}
+#bg i:nth-child(1){background:radial-gradient(circle,var(--b1),transparent 62%);left:-30vmax;top:-34vmax;animation:d1 28s ease-in-out infinite alternate}
+#bg i:nth-child(2){background:radial-gradient(circle,var(--b2),transparent 62%);right:-36vmax;top:20vh;animation:d2 34s ease-in-out infinite alternate}
+#bg i:nth-child(3){background:radial-gradient(circle,var(--b3),transparent 62%);left:-12vmax;bottom:-44vmax;animation:d3 30s ease-in-out infinite alternate}
+@keyframes d1{to{transform:translate(20vw,24vh)}}@keyframes d2{to{transform:translate(-24vw,20vh)}}@keyframes d3{to{transform:translate(18vw,-26vh)}}
+main{max-width:440px;margin:0 auto;padding-top:9vh;text-align:center}
+.icon{width:104px;height:104px;border-radius:24px;box-shadow:0 14px 34px rgba(10,132,255,.25),0 2px 6px rgba(0,0,0,.08)}
+h1{font-size:32px;letter-spacing:-.02em;margin:18px 0 4px}
+.sub{color:var(--tx2);margin:0 0 6px}
+.tags{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0 22px}
+.tags span{font-size:12.5px;padding:4px 10px;border-radius:99px;background:var(--card);border:.5px solid var(--sep);color:var(--tx2)}
+.card{text-align:left;background:var(--card);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);border-radius:22px;padding:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 8px 28px rgba(31,38,135,.08);margin-bottom:14px}
+.card h2{font-size:17px;margin:0 0 12px}
+ol{margin:0;padding:0;list-style:none;counter-reset:s}
+ol li{counter-increment:s;display:flex;gap:12px;align-items:flex-start;padding:8px 0;border-top:.5px solid var(--sep)}
+ol li:first-child{border-top:0}
+ol li:before{content:counter(s);flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(135deg,var(--blue),var(--indigo))}
+.k{display:inline-flex;align-items:center;gap:4px;padding:1px 8px;border-radius:8px;background:rgba(10,132,255,.12);color:var(--blue);font-weight:600;font-size:14px;white-space:nowrap}
+.k svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:block;width:100%;border:0;border-radius:16px;padding:15px;font:600 17px/1.2 inherit;color:#fff;background:linear-gradient(135deg,var(--blue),var(--indigo));box-shadow:0 10px 24px rgba(10,132,255,.3),inset 0 1px 0 rgba(255,255,255,.3);text-decoration:none;text-align:center;margin:0 0 12px;transition:transform .15s}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:var(--card);color:var(--blue);box-shadow:inset 0 0 0 1px var(--sep)}
+.btn[hidden]{display:none}
+.note{color:var(--tx2);font-size:13px;text-align:center;margin:10px 0 0}
+#wx{position:fixed;inset:0;z-index:10;background:rgba(0,0,0,.78);color:#fff;text-align:right;padding:calc(12px + env(safe-area-inset-top)) 22px 0}
+#wx[hidden]{display:none}
+#wx svg{width:84px;height:84px;margin-right:4px}
+#wx p{font-size:19px;line-height:1.6;margin:8px 0 0;text-align:right}
+#wx b{color:#ffd60a}
+.pc{display:none}
+@media(min-width:760px){.pc{display:block}.mobile-only{display:none}}
+.qr{width:200px;height:200px;margin:4px auto 8px;display:block;border-radius:14px;background:#fff;padding:10px}
+@media(prefers-reduced-motion:reduce){#bg i{animation:none}.btn{transition:none}}
+</style>
+</head>
+<body>
+<div id="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<div id="wx" hidden>
+  <svg viewBox="0 0 84 84" aria-hidden="true"><path d="M12 76C30 70 52 50 62 14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M50 18l12-6 4 13" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <p>请点右上角 <b>···</b></p>
+  <p>选择 <b>在浏览器中打开</b></p>
+  <p style="font-size:15px;opacity:.8">微信里无法添加到桌面，<br>换到浏览器后再按页面提示操作</p>
+</div>
+
+<main>
+  <img class="icon" src="icon-512.png" alt="畅学英语图标">
+  <h1>畅学英语</h1>
+  <p class="sub">Hello，今天你畅学了吗？</p>
+  <div class="tags"><span>高考 3500 词</span><span>700+ 高频短语</span><span>间隔复习</span><span>离线可用</span></div>
+
+  <div class="pc card" style="text-align:center">
+    <h2>用手机扫码安装</h2>
+    <img class="qr" id="qr" src="qr.png" alt="下载页二维码">
+    <p class="note" style="margin-top:0">也可以在电脑上直接使用，Chrome 或 Edge 地址栏右侧点“安装”即可添加到桌面</p>
+  </div>
+
+  <button class="btn" id="install" hidden>安装到桌面</button>
+
+  <div class="card" id="guide"></div>
+
+  <a class="btn ghost" href="home.html">了解畅学英语</a>
+  <p class="note">只需安装一次，之后从桌面图标打开，没网也能背单词。<br>账号由老师开通，首次登录请修改初始密码。</p>
+</main>
+
+<script>
+const ua=navigator.userAgent,$=s=>document.querySelector(s);
+const isWX=/MicroMessenger/i.test(ua),isQQ=/\bQQ\//i.test(ua)&&!/MQQBrowser/i.test(ua),isWeibo=/Weibo/i.test(ua),isDingTalk=/DingTalk/i.test(ua);
+const isIOS=/iPhone|iPad|iPod/i.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+const isHarmony=/HarmonyOS|OpenHarmony|ArkWeb/i.test(ua),isHuawei=/HuaweiBrowser|HONORBrowser/i.test(ua);
+const isAndroid=/Android/i.test(ua);
+const isSafari=isIOS&&/Safari/i.test(ua)&&!/CriOS|FxiOS|EdgiOS|MQQBrowser|UCBrowser|Quark|baidu/i.test(ua);
+const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+const SHARE='<svg viewBox="0 0 24 24"><path d="M12 15V3M8 7l4-4 4 4"/><path d="M5 11v9h14v-9"/></svg>';
+const DOTS='<svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg>';
+function guide(title,steps){$('#guide').innerHTML='<h2>'+title+'</h2><ol>'+steps.map(s=>'<li><div>'+s+'</div></li>').join('')+'</ol>'}
+if(standalone){guide('已经安装好了',['畅学英语已经在你的桌面上了，从桌面图标打开即可。'])}
+else if(isWX||isQQ||isWeibo||isDingTalk){$('#wx').hidden=false;guide('在浏览器里打开',['点右上角 <span class="k">'+DOTS+'</span>','选择 <span class="k">在浏览器中打开</span>','在浏览器里按提示把畅学英语添加到桌面'])}
+else if(isIOS&&!isSafari){guide('请用 Safari 打开',['iPhone 只能在 <span class="k">Safari</span> 里添加到桌面','点右上角或底部菜单，选择 <span class="k">在 Safari 中打开</span>，或复制本页网址粘贴到 Safari'])}
+else if(isIOS){guide('iPhone / iPad 安装步骤',['点屏幕底部的分享按钮 <span class="k">'+SHARE+'分享</span>','往下滑，点 <span class="k">添加到主屏幕</span>','点右上角 <span class="k">添加</span>，桌面上就会出现畅学英语'])}
+else if(isHarmony||isHuawei){guide('华为 / 鸿蒙手机安装步骤',['用 <span class="k">华为浏览器</span> 打开本页（其他浏览器也可以试试）','点底部或右上角的菜单 <span class="k">'+DOTS+'</span>','选择 <span class="k">添加到桌面</span>（有的版本叫“添加快捷方式”），再点确定'])}
+else if(isAndroid){guide('安卓手机安装步骤',['如果上方出现“安装到桌面”，直接点它','没有的话，点浏览器右上角菜单 <span class="k">'+DOTS+'</span>','选择 <span class="k">安装应用</span> 或 <span class="k">添加到主屏幕</span>','部分手机需要在系统设置里允许浏览器“创建桌面快捷方式”'])}
+else{guide('电脑上使用',['用 <span class="k">Chrome</span> 或 <span class="k">Edge</span> 打开本页','点地址栏右侧的 <span class="k">安装</span> 图标，或点上方“安装到桌面”'])}
+let deferred=null;
+addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e;$('#install').hidden=false});
+$('#install').onclick=async()=>{if(!deferred)return;deferred.prompt();try{const r=await deferred.userChoice;if(r.outcome==='accepted'){$('#install').textContent='已添加到桌面';$('#install').disabled=true}}catch(e){}deferred=null};
+addEventListener('appinstalled',()=>{$('#install').hidden=false;$('#install').textContent='已添加到桌面';$('#install').disabled=true});
+if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+</body>
+</html>
