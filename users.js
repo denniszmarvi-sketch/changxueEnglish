@@ -1,2 +1,2 @@
-// 畅学英语 · 学员名单（占位文件，请用「名单生成器.html」生成后覆盖）
-window.USERS={"v":1,"list":[]};
+// 畅学英语 · 学员名单（由名单生成器生成，内容已加密）
+window.USERS={"v":1,"list":[{"i":"8b079b1d4dc56ae89b54357f","d":"6qdoCvxHPa7c8HGk/LVgJ9THXfXQdI64MfMfqNr/r4wMJmX2hBFUe5AfoPqnowkmH5Hk7rGQKjJYkdkpJrQk3aqQl+prLTsFLDoqFWzMEeasag8qlJEPVBR/oYoCr5GSErSuICrCBwiF2maSoXhXbQk="},{"i":"151d2b493e8c05b8bc3dc43b","d":"yfDDtQYw1inBs77bfUl9G0vL2newUI8jZO9MdTkgHc9CTyJCgom3EGjCBMrjFFRDHv+GB0rmXK+OwO/b0v+uNA4s4ALMfLVAME2k/mfnbVBf/SRlRz9tnBITGQoMrgx+Cf8u8CG4GEA="}]};
